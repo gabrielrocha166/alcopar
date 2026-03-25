@@ -12,6 +12,7 @@ import Partners from './components/Partners';
 import CTA from './components/CTA';
 import Institutional from './pages/Institutional';
 import Bioenergy from './pages/Bioenergy';
+import Consecana from './pages/Consecana';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -36,6 +37,16 @@ function App() {
       <div className="min-h-screen bg-white">
         <Header onNavigate={handleNavigation} />
         <Bioenergy />
+        <Footer />
+      </div>
+    );
+  }
+
+  if (currentPage === 'consecana') {
+    return (
+      <div className="min-h-screen bg-white">
+        <Header onNavigate={handleNavigation} />
+        <Consecana />
         <Footer />
       </div>
     );

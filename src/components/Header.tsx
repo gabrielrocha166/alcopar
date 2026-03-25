@@ -21,7 +21,7 @@ export default function Header({ onNavigate }: HeaderProps) {
     { label: 'Setor de Bioenergia', page: 'bioenergy' },
     { label: 'Associados', page: 'home' },
     { label: 'Mercado e Indicadores', page: 'home' },
-    { label: 'Consecana', page: 'home' },
+    { label: 'Consecana', page: 'consecana' },
     { label: 'Notícias', page: 'home' },
     { label: 'Eventos', page: 'home' },
     { label: 'Publicações', page: 'home' },
