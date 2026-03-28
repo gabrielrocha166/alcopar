@@ -31,6 +31,7 @@ export default function Header({ onNavigate }: HeaderProps) {
       label: 'Produtos',
       submenu: [
         { label: 'Álcool (Etanol)', page: 'ethanol' },
+        { label: 'Açúcar', page: 'sugar' },
       ]
     },
     { label: 'Consecana', page: 'consecana' },
