@@ -13,6 +13,7 @@ import CTA from './components/CTA';
 import Institutional from './pages/Institutional';
 import Bioenergy from './pages/Bioenergy';
 import Consecana from './pages/Consecana';
+import Ethanol from './pages/Ethanol';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -47,6 +48,16 @@ function App() {
       <div className="min-h-screen bg-white">
         <Header onNavigate={handleNavigation} />
         <Consecana />
+        <Footer />
+      </div>
+    );
+  }
+
+  if (currentPage === 'ethanol') {
+    return (
+      <div className="min-h-screen bg-white">
+        <Header onNavigate={handleNavigation} />
+        <Ethanol />
         <Footer />
       </div>
     );
