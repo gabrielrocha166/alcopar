@@ -15,6 +15,7 @@ import Bioenergy from './pages/Bioenergy';
 import Consecana from './pages/Consecana';
 import Ethanol from './pages/Ethanol';
 import Sugar from './pages/Sugar';
+import SubProdutos from './pages/SubProdutos';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -69,6 +70,16 @@ function App() {
       <div className="min-h-screen bg-white">
         <Header onNavigate={handleNavigation} />
         <Sugar />
+        <Footer />
+      </div>
+    );
+  }
+
+  if (currentPage === 'subprodutos') {
+    return (
+      <div className="min-h-screen bg-white">
+        <Header onNavigate={handleNavigation} />
+        <SubProdutos />
         <Footer />
       </div>
     );
