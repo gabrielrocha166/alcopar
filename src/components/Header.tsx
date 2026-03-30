@@ -30,6 +30,7 @@ export default function Header({ onNavigate }: HeaderProps) {
     {
       label: 'Produtos',
       submenu: [
+        { label: 'Cana-de-Açúcar', page: 'sugarcane' },
         { label: 'Álcool (Etanol)', page: 'ethanol' },
         { label: 'Açúcar', page: 'sugar' },
         { label: 'Subprodutos', page: 'subprodutos' },

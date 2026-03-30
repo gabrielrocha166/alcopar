@@ -16,6 +16,7 @@ import Consecana from './pages/Consecana';
 import Ethanol from './pages/Ethanol';
 import Sugar from './pages/Sugar';
 import SubProdutos from './pages/SubProdutos';
+import SugarcaneBrazil from './pages/SugarcaneBrazil';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -80,6 +81,16 @@ function App() {
       <div className="min-h-screen bg-white">
         <Header onNavigate={handleNavigation} />
         <SubProdutos />
+        <Footer />
+      </div>
+    );
+  }
+
+  if (currentPage === 'sugarcane') {
+    return (
+      <div className="min-h-screen bg-white">
+        <Header onNavigate={handleNavigation} />
+        <SugarcaneBrazil />
         <Footer />
       </div>
     );
