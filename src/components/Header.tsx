@@ -29,6 +29,7 @@ export default function Header({ onNavigate }: HeaderProps) {
     { label: 'Mercado e Indicadores', page: 'home' },
     {
       label: 'Produtos',
+      page: 'produtos',
       submenu: [
         { label: 'Cana-de-Açúcar', page: 'sugarcane' },
         { label: 'Álcool (Etanol)', page: 'ethanol' },
@@ -63,7 +64,7 @@ export default function Header({ onNavigate }: HeaderProps) {
               <div key={item.label} className="relative group">
                 {('submenu' in item && item.submenu) ? (
                   <>
-                    <button className="text-sm text-gray-700 hover:text-green-600 transition-colors font-medium cursor-pointer bg-transparent border-none flex items-center gap-1">
+                    <button onClick={() => 'page' in item && item.page && handleNavigation(item.page)} className="text-sm text-gray-700 hover:text-green-600 transition-colors font-medium cursor-pointer bg-transparent border-none flex items-center gap-1">
                       {item.label}
                       <ChevronDown className="h-4 w-4" />
                     </button>
@@ -110,7 +111,12 @@ export default function Header({ onNavigate }: HeaderProps) {
                   {('submenu' in item && item.submenu) ? (
                     <>
                       <button
-                        onClick={() => toggleSubmenu(item.label)}
+                        onClick={() => {
+                          toggleSubmenu(item.label);
+                          if ('page' in item && item.page) {
+                            handleNavigation(item.page);
+                          }
+                        }}
                         className="text-sm text-gray-700 hover:text-green-600 transition-colors font-medium cursor-pointer bg-transparent border-none text-left w-full flex items-center justify-between"
                       >
                         {item.label}

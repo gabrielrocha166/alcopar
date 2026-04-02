@@ -17,6 +17,7 @@ import Ethanol from './pages/Ethanol';
 import Sugar from './pages/Sugar';
 import SubProdutos from './pages/SubProdutos';
 import SugarcaneBrazil from './pages/SugarcaneBrazil';
+import Produtos from './pages/Produtos';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -91,6 +92,16 @@ function App() {
       <div className="min-h-screen bg-white">
         <Header onNavigate={handleNavigation} />
         <SugarcaneBrazil />
+        <Footer />
+      </div>
+    );
+  }
+
+  if (currentPage === 'produtos') {
+    return (
+      <div className="min-h-screen bg-white">
+        <Header onNavigate={handleNavigation} />
+        <Produtos onNavigate={handleNavigation} />
         <Footer />
       </div>
     );
