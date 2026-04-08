@@ -38,6 +38,7 @@ export default function Header({ onNavigate }: HeaderProps) {
       ]
     },
     { label: 'Consecana', page: 'consecana' },
+    { label: 'CCTS', page: 'ccts' },
     { label: 'Notícias', page: 'home' },
     { label: 'Eventos', page: 'home' },
     { label: 'Publicações', page: 'home' },

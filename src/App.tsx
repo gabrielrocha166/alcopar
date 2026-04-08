@@ -18,6 +18,7 @@ import Sugar from './pages/Sugar';
 import SubProdutos from './pages/SubProdutos';
 import SugarcaneBrazil from './pages/SugarcaneBrazil';
 import Produtos from './pages/Produtos';
+import CCTS from './pages/CCTS';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -102,6 +103,16 @@ function App() {
       <div className="min-h-screen bg-white">
         <Header onNavigate={handleNavigation} />
         <Produtos onNavigate={handleNavigation} />
+        <Footer />
+      </div>
+    );
+  }
+
+  if (currentPage === 'ccts') {
+    return (
+      <div className="min-h-screen bg-white">
+        <Header onNavigate={handleNavigation} />
+        <CCTS />
         <Footer />
       </div>
     );
