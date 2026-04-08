@@ -300,19 +300,27 @@ export default function CCTS() {
                         </div>
 
                         <div className="flex gap-2 pt-4 border-t border-gray-100">
-                          <a
-                            href={doc.pdf_url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex-1 flex items-center justify-center gap-2 bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition-colors text-sm font-medium"
+                          <button
+                            onClick={() => {
+                              if (doc.pdf_url) {
+                                window.open(doc.pdf_url, '_blank');
+                              }
+                            }}
+                            className="flex-1 flex items-center justify-center gap-2 bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition-colors text-sm font-medium disabled:opacity-50 disabled:cursor-not-allowed"
+                            disabled={!doc.pdf_url}
                           >
                             <Eye className="h-4 w-4" />
                             Visualizar
-                          </a>
+                          </button>
                           <a
                             href={doc.pdf_url}
-                            download
-                            className="flex-1 flex items-center justify-center gap-2 bg-gray-200 text-gray-700 py-2 px-4 rounded-lg hover:bg-gray-300 transition-colors text-sm font-medium"
+                            download={`${doc.title}.pdf`}
+                            onClick={(e) => {
+                              if (!doc.pdf_url) {
+                                e.preventDefault();
+                              }
+                            }}
+                            className="flex-1 flex items-center justify-center gap-2 bg-gray-200 text-gray-700 py-2 px-4 rounded-lg hover:bg-gray-300 transition-colors text-sm font-medium disabled:opacity-50 disabled:cursor-not-allowed"
                           >
                             <Download className="h-4 w-4" />
                             Download
